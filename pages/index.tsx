@@ -98,6 +98,148 @@ const Home: NextPage = () => {
     const [fishMintAmount,setFishMintAmount] = useState();
     const [feedMintAmount,setFeedMintAmount] = useState();
 
+    
+    useEffect(() => {
+      const init = async () => {
+        if(myaddress) {
+        
+       
+          setCaptainBalance(await getCaptainBalanceOf(myaddress))
+          setFishBalance(((await getFishBalanceOf(myaddress) / 1000000000000000000).toFixed(2)))
+          setYardBalance(await getYardBalanceOf(myaddress))
+          const [tokenIds, myFishTotalTon,totalFishClaimable, estEggPerDay] =  await GetMyStakedCaptain(myaddress)
+          setMyCaptainStake(tokenIds)
+          setMyFishTotalTon(myFishTotalTon)
+          setTotalClaimable(Number((totalFishClaimable/1000000000000000000).toFixed(2)))
+          setEstEggPerDay(estEggPerDay)
+          setTotalTon(await getTotalTonOfAllCaptain())
+          setFeedActivity(await getFeedActivity(myaddress) )
+          setStakedFish(await getYourStakedFish(myaddress))
+          setEstDailyFeed(await getEstDailyFeed(myaddress))
+  
+          setTotalYardClaimAmount( (await getYardClaimable(myaddress)).toFixed(3))
+          //console.log(feedActivity[1].levelUp)
+          //console.log("getYardClaimable:", await getYardClaimable(myaddress))
+          console.log("fishBalance:",fishBalance)
+          console.log("myCaptainStake",myCaptainStake)
+
+          setCaptainStakeDetails(await getCaptionStakeDetails(myaddress));
+          setCaptainUnstakeDetails(await getCaptionUnstakeDetails(myaddress));
+          console.log("Goster captainUnstakeDetails:", captainUnstakeDetails)
+
+          setUnstakeCaptionList(await getUnstakeList(myaddress))
+          setStakeCaptionList(await getStakeList(myaddress))
+
+          
+   
+          setEggStakeMax(Number(fishBalance).toFixed(4))
+        
+  
+
+    
+     
+  
+  
+       
+        }
+  
+      }
+  
+      init()
+  },[myaddress])
+
+
+  const putStakeEggMax = () => {
+      
+    setStakeEggInput(Number(fishBalance).toFixed(0))
+   //  setEggAmount(Number(fishBalance).toFixed(0))
+
+
+  }
+
+  const putUnstakeEggMax = () => {
+    setUnstakeEggInput(Number(stakedFish.amount))
+  }
+
+  const putSwapEggMax = () => {
+    setSwapEggInput(Number(fishBalance).toFixed(0))
+  }
+
+
+  const addMaxEggUnstake = () => {
+
+   setEggAmount(fishBalance)
+
+
+}
+
+
+  const handleEggStake = (e) => {
+    
+
+    setStakeEggInput(e.target.value)
+
+
+   
+    
+  } 
+
+
+  const handleCaptainMint = (e) => {
+    
+
+    setCaptainMintAmount(e.target.value)
+
+
+   
+    
+  } 
+
+
+  const handleFishMint = (e) => {
+    
+
+    setFishMintAmount(e.target.value)
+
+
+   
+    
+  } 
+
+  
+  const handleFeedMint = (e) => {
+    
+
+    setFeedMintAmount(e.target.value)
+
+
+   
+    
+  } 
+
+
+
+  const handleEggUnstake = (e) => {
+    
+
+    setUnstakeEggInput(e.target.value)
+
+
+    
+  } 
+
+  
+  const handleEggSwap = (e) => {
+    
+
+    setSwapEggInput(e.target.value)
+
+
+    
+  } 
+
+
+
 
     const checkUser = async () => {
   
