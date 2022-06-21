@@ -523,6 +523,10 @@ const Home: NextPage = () => {
 
 
     return(
+      <div className="min-h-screen h-full w-full overflow-hidden flex flex-col items-center justify-center bg-brand-background ">
+    
+
+      <div id="full" className="  w-full h-full flex flex-col  justify-center max-w-3xl">
 
       <div>
         {isConnected ? (
@@ -1083,11 +1087,13 @@ const Home: NextPage = () => {
         <p className='mb-4 text-xs text-gray-700'> {loginState}</p>
           
         </main>
-       <button className='px-6 py-4 rounded-md text-sm font-medium border-0 focus:outline-none focus: ring-transparent' onClick={login}>Sign in with Metamask</button>
-       <br />
-       <button className='px-6 py-4 rounded-md text-sm font-medium border-0 focus:outline-none focus: ring-transparent' onClick={checkUser}>Check User</button>
+ 
+       <button className='px-6 py-4 rounded-md text-xl font-medium border-0 focus:outline-none focus: ring-transparent bg-green-600 text-white rounded-full px-38 py-5' onClick={login}>Sign in with Metamask</button>
+    
  
      </div>)}
+      </div>
+      </div>
       </div>
        
         
