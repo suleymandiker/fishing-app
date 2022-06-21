@@ -238,6 +238,209 @@ const Home: NextPage = () => {
     
   } 
 
+  async function claimFishFunc() {
+
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+       await claimFish(myaddress)
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+ 
+  }
+
+
+    async function claimYardFunc() {
+
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+       await claimYard()
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+ 
+  }
+
+
+
+  
+
+  const  stakeEggForFeedFunc =  async  (amount:any) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+      
+
+       await stakeEggForFeed(amount)
+       console.log(amount)
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+  const  unstakeEggForFeedFunc =  async  (amount:any) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+      
+
+       await unstakeEggForFeed(amount)
+       console.log(amount)
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+  const  swapFishForFeedFunc =  async  (amount:any) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+      
+
+       await swapFishForFeed(amount)
+       console.log(amount)
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+  const  feedYardFunc =  async  (tokenId:number,amount:any) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+      
+
+       await feedYard(tokenId, amount)
+
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+
+   const  skipTimeForLevelFunc =  async  (tokenId:number,amount:any) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+ 
+
+       await skipTimeForLevel(tokenId, amount)
+  
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+  const  mintCaptainFunc =  async  (myAdress:any,amount:any) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+ 
+
+       await mintCaptain(myAdress, amount)
+  
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+
+  const  mintFishFunc =  async  (myAdress:any,amount:any) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+ 
+
+       await mintFish(myAdress, amount)
+  
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+  const  mintFeedFunc =  async  (myAdress:any,amount:any) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+ 
+
+       await mintFeed(myAdress, amount)
+  
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+
+  
+
+
+  const  levelUpCaptainFunc =  async  (tokenId:number) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+ 
+
+       await levelUpCaptain(tokenId)
+  
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+  const  stakeCaptainFunc =  async  (tokenIds:number[]) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+ 
+
+       await stakeCaptain(tokenIds)
+  
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+
+  const  unstakeCaptainFunc =  async  (tokenIds:number[]) =>  {
+    
+    if (typeof window.ethereum !== "undefined") {
+      setLoading(true)
+
+ 
+
+       await unstakeCaptain(tokenIds)
+  
+       setLoading(false)
+    } else {
+      console.log("Please install MetaMask");
+    }
+  }
+
+
+
 
 
 
